@@ -11,74 +11,124 @@
 
     <!-- CardView para agrupar los botones del panel de administrador -->
 
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#27B9CD"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo_espi"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardAdmin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
+        app:cardElevation="20dp"
+        app:circularflow_defaultRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Contenido dentro del CardView -->
+        <!-- LinearLayout dentro del CardView para organizar los campos -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Título del Panel de Administrador -->
+            <!-- Campo de Correo Electrónico o Documento -->
 
-            <TextView
-                android:id="@+id/textViewAdminTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="Panel de Administrador"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+            <!-- Campo de Contraseña -->
 
-            <!-- Botón Ver Usuarios -->
-            <Button
-                android:id="@+id/btnViewUsers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Ver Usuario" />
 
-            <!-- Botón Crear Usuario -->
-            <Button
-                android:id="@+id/btnCreateUser"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Crear Usuario" />
+                android:layout_height="480dp">
 
-            <!-- Botón Cerrar Sesión -->
-            <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cerrar Sesión" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Panel Administrador"
+                        android:textAlignment="center"
+                        android:textColor="#27B9CD"
+                        android:textSize="35sp"
+                        android:textStyle="bold|italic" />
+
+                    <View
+                        android:id="@+id/view7"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp" />
+
+                    <Button
+                        android:id="@+id/btnViewUsers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#27B9CD"
+                        android:text="Ver Usuario"
+                        android:textColor="#FFFFFF"
+                        android:textSize="21dp"
+                        android:textStyle="bold|italic" />
+
+                    <View
+                        android:id="@+id/view10"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp" />
+
+                    <Button
+                        android:id="@+id/btnCreateUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#27B9CD"
+                        android:text="Crear Usuario"
+                        android:textColor="#FFFFFF"
+                        android:textSize="21dp"
+                        android:textStyle="bold|italic" />
+
+                    <View
+                        android:id="@+id/view5"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp" />
+
+                    <Button
+                        android:id="@+id/btnLogout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:backgroundTint="#27B9CD"
+                        android:text="Cerrar Sesión"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25dp"
+                        android:textStyle="bold|italic" />
+
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- Botón de Iniciar Sesión -->
+
+            <!-- Texto clicable para "¿Olvidaste tu contraseña?" -->
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="263dp"
-        android:layout_height="268dp"
-        android:background="#D8E6E7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logoadmin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

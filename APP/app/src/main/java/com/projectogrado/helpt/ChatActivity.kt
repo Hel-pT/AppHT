@@ -14,7 +14,7 @@ import java.util.*
 class ChatActivity : AppCompatActivity() {
 
     private lateinit var recyclerViewChat: RecyclerView
-  //  private lateinit var chatAdapter: ChatAdapter
+    private lateinit var chatAdapter: ChatAdapter
     private lateinit var etMensaje: EditText
     private lateinit var btnEnviar: Button
 
@@ -61,9 +61,9 @@ class ChatActivity : AppCompatActivity() {
                         }
                     }
 
-//                    chatAdapter = ChatAdapter(listaMensajes, auth.currentUser?.uid ?: "")
-                    //                  recyclerViewChat.adapter = chatAdapter
-                    //recyclerViewChat.scrollToPosition(listaMensajes.size - 1)
+                    chatAdapter = ChatAdapter(listaMensajes, auth.currentUser?.uid ?: "")
+                    recyclerViewChat.adapter = chatAdapter
+                    recyclerViewChat.scrollToPosition(listaMensajes.size - 1)
                 }
             }
     }

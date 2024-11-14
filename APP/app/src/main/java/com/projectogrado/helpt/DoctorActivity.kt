@@ -32,7 +32,7 @@ class DoctorActivity : AppCompatActivity() {
 
         // Abrir chat con un responsable
         btnAbrirChat.setOnClickListener {
-            val intent = Intent(this, DoctorChatActivity::class.java)  // Asegúrate de tener esta actividad creada
+            val intent = Intent(this, ChatActivity::class.java)
             startActivity(intent)
         }
 
