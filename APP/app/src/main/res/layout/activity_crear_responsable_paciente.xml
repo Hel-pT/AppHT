@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearPacienteResponsableActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Campo para el nombre del Responsable -->
+            <EditText
+                android:id="@+id/etNombreResponsable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del Responsable"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"
+                android:inputType="textPersonName"/>
+
+            <!-- Campo para el documento del Responsable -->
+            <EditText
+                android:id="@+id/etDocumentoResponsable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Documento del Responsable"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@id/etNombreResponsable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo para el teléfono del Responsable -->
+            <EditText
+                android:id="@+id/etTelefonoResponsable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Teléfono del Responsable"
+                android:inputType="phone"
+                app:layout_constraintTop_toBottomOf="@id/etDocumentoResponsable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo para el email del Responsable -->
+            <EditText
+                android:id="@+id/etCorreoResponsable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Email del Responsable"
+                android:inputType="textEmailAddress"
+                app:layout_constraintTop_toBottomOf="@id/etTelefonoResponsable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo para la contraseña del Responsable -->
+            <EditText
+                android:id="@+id/etPasswordResponsable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña del Responsable"
+                android:inputType="textPassword"
+                app:layout_constraintTop_toBottomOf="@id/etCorreoResponsable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo para la fecha de nacimiento del Responsable -->
+            <EditText
+                android:id="@+id/etFechaNacimientoResponsable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Fecha de Nacimiento del Responsable"
+                android:inputType="date"
+                app:layout_constraintTop_toBottomOf="@id/etPasswordResponsable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo para el nombre del Paciente -->
+            <EditText
+                android:id="@+id/etNombrePaciente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del Paciente"
+                app:layout_constraintTop_toBottomOf="@id/etFechaNacimientoResponsable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"
+                android:inputType="textPersonName"/>
+
+            <!-- Campo para el documento del Paciente -->
+            <EditText
+                android:id="@+id/etDocumentoPaciente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Documento del Paciente"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@id/etNombrePaciente"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Campo para la fecha de nacimiento del Paciente -->
+            <EditText
+                android:id="@+id/etFechaNacimientoPaciente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Fecha de Nacimiento del Paciente"
+                android:inputType="date"
+                app:layout_constraintTop_toBottomOf="@id/etDocumentoPaciente"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Botón para guardar los datos -->
+            <Button
+                android:id="@+id/btnGuardarResponsablePaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                app:layout_constraintTop_toBottomOf="@id/etFechaNacimientoPaciente"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

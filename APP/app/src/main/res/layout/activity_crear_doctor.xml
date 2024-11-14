@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Usuarios.Admin.crearusuario.CrearDoctorActivity">
+
+    <!-- Título para la vista de crear usuario -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Doctor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo para ingresar el nombre del Doctor -->
+    <EditText
+        android:id="@+id/etNombreDoctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del Doctor"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Campo para ingresar el documento del Doctor -->
+    <EditText
+        android:id="@+id/etDocumentoDoctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Documento del Doctor"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/etNombreDoctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Campo para ingresar el correo del Doctor -->
+    <EditText
+        android:id="@+id/etCorreoDoctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Correo del Doctor"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/etDocumentoDoctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Campo para ingresar la contraseña del Doctor -->
+    <EditText
+        android:id="@+id/etPasswordDoctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña del Doctor"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/etCorreoDoctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Campo para ingresar el teléfono del Doctor -->
+    <EditText
+        android:id="@+id/etTelefonoDoctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono del Doctor"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@id/etPasswordDoctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Botón para crear el doctor -->
+    <Button
+        android:id="@+id/btnCrearDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Doctor"
+        app:layout_constraintTop_toBottomOf="@id/etTelefonoDoctor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

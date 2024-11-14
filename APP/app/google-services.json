@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "876291400828",
+    "firebase_url": "https://app-helpt-default-rtdb.firebaseio.com",
+    "project_id": "app-helpt",
+    "storage_bucket": "app-helpt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876291400828:android:eb55eee5c61b52718495f9",
+        "android_client_info": {
+          "package_name": "com.OscarSteven.HT"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsKFGxb_L-0uYvSQHE0kqLQH7Hc20oV3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
