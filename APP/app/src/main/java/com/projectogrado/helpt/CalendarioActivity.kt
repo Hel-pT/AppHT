@@ -6,7 +6,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.*
 
 class CalendarioActivity : AppCompatActivity() {
 
@@ -31,6 +30,11 @@ class CalendarioActivity : AppCompatActivity() {
 
         // Instanciar Firestore
         firestore = FirebaseFirestore.getInstance()
+
+        tv1.text = ""
+        tv2.text = ""
+        tv3.text = ""
+
         // Establecer el listener para seleccionar una fecha
 
 
@@ -71,7 +75,9 @@ class CalendarioActivity : AppCompatActivity() {
             } else {
                 // No se encontró cita
                 tvEstadoCita.text = "No hay cita programada para el $fecha"
-                println(fecha)
+                tv1.text = ""
+                tv2.text = ""
+                tv3.text = ""
             }
         }
         .addOnFailureListener {
