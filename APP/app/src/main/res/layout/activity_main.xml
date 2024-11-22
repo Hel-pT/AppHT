@@ -30,6 +30,16 @@
         tools:layout_editor_absoluteY="0dp"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/tvddd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ayudaaaa"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="31dp" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardLogin"
         android:layout_width="0dp"

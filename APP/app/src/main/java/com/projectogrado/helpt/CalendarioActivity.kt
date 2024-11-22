@@ -1,11 +1,13 @@
 package com.projectogrado.helpt
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class CalendarioActivity : AppCompatActivity() {
 
@@ -14,6 +16,8 @@ class CalendarioActivity : AppCompatActivity() {
     private lateinit var tv1: TextView
     private lateinit var tv2: TextView
     private lateinit var tv3: TextView
+    private lateinit var keyunico: TextView
+    private lateinit var btnatras: Button
     private lateinit var firestore: FirebaseFirestore
 
 
@@ -27,19 +31,22 @@ class CalendarioActivity : AppCompatActivity() {
         tv1 = findViewById(R.id.tv1)
         tv2 = findViewById(R.id.tv2)
         tv3 = findViewById(R.id.tv3)
+        btnatras = findViewById(R.id.btnatras)
+        keyunico =findViewById(R.id.keyunico)
+
+        val remss:String = intent.extras?.getString("key").orEmpty()
+
+        keyunico.text = remss
 
         // Instanciar Firestore
         firestore = FirebaseFirestore.getInstance()
+        // Establecer el listener para seleccionar una fecha
 
         tv1.text = ""
         tv2.text = ""
         tv3.text = ""
 
-        // Establecer el listener para seleccionar una fecha
-
-
-
-        firestore.collection("users").whereEqualTo("role", "responsable").get().addOnSuccessListener { documents ->
+        firestore.collection("users").whereEqualTo("correo", keyunico.text).get().addOnSuccessListener { documents ->
             if (!documents.isEmpty) {
                 for (document in documents) {
                     val verdocu = document.data.get("pacienteId").toString()

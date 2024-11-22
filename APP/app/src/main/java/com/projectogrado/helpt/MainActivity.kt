@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.projectogrado.helpt.ResponsableActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,21 +17,25 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var tvForgotPassword: TextView
-
     private lateinit var auth: FirebaseAuth
+    private lateinit var tvddd : TextView
+
+
+
     private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         etEmailOrDocumento = findViewById(R.id.etEmailOrDocumento)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
         tvForgotPassword = findViewById(R.id.tvForgotPassword)
-
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
+        tvddd = findViewById(R.id.tvddd)
+
+
 
         btnLogin.setOnClickListener {
             val emailOrDocumento = etEmailOrDocumento.text.toString().trim()
@@ -61,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loginResponsable(email: String, password: String) {
+     fun loginResponsable(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -87,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                     // Comprobar si la contraseña es igual al documento
                     if (documentoPaciente == password) {
                         // Si es correcto, redirigir a la pantalla del paciente
-                        Toast.makeText(this, "Bienvenido, ${pacienteData?.nombre}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Bienvenido, ${pacienteData.nombre}", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, PacienteActivity::class.java))
                         finish()
                     } else {
@@ -114,16 +119,32 @@ class MainActivity : AppCompatActivity() {
                             Toast.makeText(this, "Bienvenido, $userName", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this, AdminActivity::class.java))
                             finish()
+                            tvddd.text = etEmailOrDocumento.text.toString()
+                            val mss:String =tvddd.text.toString()
+                            val sendmss = Intent(this, ResponsableActivity::class.java)
+                            sendmss.putExtra("key", mss)
+                            startActivity(sendmss)
                         }
                         "doctor" -> {
                             Toast.makeText(this, "Bienvenido, $userName", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this, DoctorActivity::class.java))
                             finish()
+                            tvddd.text = etEmailOrDocumento.text.toString()
+                            val mss:String =tvddd.text.toString()
+                            val sendmss = Intent(this, ResponsableActivity::class.java)
+                            sendmss.putExtra("key", mss)
+                            startActivity(sendmss)
                         }
                         "responsable" -> {
                             Toast.makeText(this, "Bienvenido, $userName", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, ResponsableActivity::class.java))
+                            //startActivity(Intent(this, ResponsableActivity::class.java))
+                            tvddd.text = etEmailOrDocumento.text.toString()
+                            val mss:String =tvddd.text.toString()
+                            val sendmss = Intent(this, ResponsableActivity::class.java)
+                            sendmss.putExtra("key", mss)
+                            startActivity(sendmss)
                             finish()
+
                         }
                         else -> {
                             Toast.makeText(this, "Rol no reconocido", Toast.LENGTH_SHORT).show()
@@ -138,6 +159,8 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
+
+
     private fun resetPassword(email: String) {
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
@@ -149,3 +172,4 @@ class MainActivity : AppCompatActivity() {
             }
     }
 }
+

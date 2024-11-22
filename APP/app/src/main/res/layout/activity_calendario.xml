@@ -13,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#27B9CD"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <CalendarView
         android:id="@+id/calendarView"
@@ -32,6 +32,16 @@
 
     <!-- TextView para mostrar el estado de la cita -->
 
+    <TextView
+        android:id="@+id/keyunico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ayudaaaa"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="31dp" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardLogin"
         android:layout_width="0dp"
@@ -41,14 +51,15 @@
         app:cardCornerRadius="16dp"
         app:cardElevation="20dp"
         app:circularflow_defaultRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView">
 
         <!-- LinearLayout dentro del CardView para organizar los campos -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -149,11 +160,22 @@
                 </LinearLayout>
             </ScrollView>
 
+            <Button
+                android:id="@+id/btnatras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#27B9CD"
+                android:text="Volver"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                android:textStyle="bold|italic" />
+
             <!-- Botón de Iniciar Sesión -->
 
             <!-- Texto clicable para "¿Olvidaste tu contraseña?" -->
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

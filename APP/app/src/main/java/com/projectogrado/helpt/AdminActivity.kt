@@ -3,11 +3,13 @@ package com.projectogrado.helpt
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.projectogrado.helpt.Usuarios.Admin.crearusuario.CrearDoctorActivity
 import com.projectogrado.helpt.Usuarios.Admin.adminsitrarusuario.ListaDoctoresActivity
 
 class AdminActivity : AppCompatActivity() {
+    private lateinit var tvdoc: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +19,11 @@ class AdminActivity : AppCompatActivity() {
         val btnViewUsers = findViewById<Button>(R.id.btnViewUsers)
         val btnCreateUser = findViewById<Button>(R.id.btnCreateUser)
         val btnLogout = findViewById<Button>(R.id.btnLogout)
+        tvdoc = findViewById(R.id.tvdoc)
 
+        val remss:String = intent.extras?.getString("key").orEmpty()
+
+        tvdoc.text = remss
         // Manejar clic del botón Ver Usuario
         btnViewUsers.setOnClickListener {
             // Redirigir a la actividad de lista de usuarios (crea esta actividad después)

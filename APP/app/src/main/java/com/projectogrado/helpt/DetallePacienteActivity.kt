@@ -12,6 +12,7 @@ class DetallePacienteActivity : AppCompatActivity() {
     private lateinit var tvDocumentoPaciente: TextView
     private lateinit var tvFechaNacimientoPaciente: TextView
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var keyunico: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,12 @@ class DetallePacienteActivity : AppCompatActivity() {
         tvNombrePaciente = findViewById(R.id.tvNombrePaciente)
         tvDocumentoPaciente = findViewById(R.id.tvDocumentoPaciente)
         tvFechaNacimientoPaciente = findViewById(R.id.tvFechaNacimientoPaciente)
+        keyunico =findViewById(R.id.keyunico)
+
+
+        val remss:String = intent.extras?.getString("key").orEmpty()
+
+        keyunico.text = remss
 
 
         // Instanciar Firestore

@@ -31,6 +31,20 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="0dp" />
 
+    <TextView
+        android:id="@+id/tvdoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="si se logro o no se"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34dp"
+        android:textStyle="bold|italic"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="71dp"
+        tools:layout_editor_absoluteY="266dp" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardAdmin"
         android:layout_width="0dp"
